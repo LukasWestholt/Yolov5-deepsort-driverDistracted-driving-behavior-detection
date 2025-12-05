@@ -21,6 +21,9 @@ uv sync
 uv run main.py
 ```
 
+We depend on dlib precompiled for windows by https://github.com/z-mahmud22/Dlib_Windows_Python3.x/tree/main.
+If you want to compile it yourself, you need to install [cmake](https://cmake.org/download/) first and then replace dlib with from pip.
+
 For demonstration results, watch the video.
 
 [Watch on Bilibili](https://www.bilibili.com/video/BV1MK4y1d7a8/)
