@@ -1,32 +1,31 @@
-# 人物专注性检测
+## Human Attention Detection
 
-## 1.0版本
-在征得原作者的同意之后，进行了部分修改，得到V1.0版本
+## Version 1.0
+Following approval from the original author, partial modifications were implemented to produce Version 1.0.
 
-主要不同地方为：
+Key differences include:
 
-1、疲劳检测中去掉了点头行为的检测，仅保留闭眼检测和打哈欠检测。
+1. Fatigue detection now excludes nodding behavior detection, retaining only eye-closure and yawning detection.
+2. YoloV5 weights were retrained with increased training iterations.
 
-2、Yolov5的权重进行了重新训练，增加了训练轮次。
+3. The frontend UI has been modified, streamlining certain functionalities.
 
-3、前端UI进行了修改，精简了部分功能。
+## Project Overview
+This project focuses on human attention detection, comprising two distinct detection modules: fatigue detection and distraction behavior detection.
+The fatigue detection module utilizes Dlib for facial landmark detection. It then assesses eye and mouth opening/closing degrees to determine eye closure or yawning, employing the Perclos model to calculate fatigue levels.
+The distraction detection component employs YoloV5 to identify three behaviors: phone use, smoking, and drinking.
 
-## 项目介绍
-该项目为人物专注性检测，分为两个检测部分，疲劳检测和分心行为检测。
-疲劳检测部分，使用Dlib进行人脸关键点检测，然后通过计算眼睛和嘴巴的开合程度来判断是存在否闭眼或者打哈欠，并使用Perclos模型计算疲劳程度。
-分心行为检测部分，使用Yolov5，检测是否存在玩手机、抽烟、喝水这三种行为。
+## Usage (windows only)
+```
+uv sync
+uv run main.py
+```
 
-## 使用方法
-依赖：YoloV5、Dlib、PySide2
+For demonstration results, watch the video.
 
-直接运行main.py，即可使用本程序，具体效果可以观看演示视频。
+[Watch on Bilibili](https://www.bilibili.com/video/BV1MK4y1d7a8/)
 
-[bilibili在线观看](https://www.bilibili.com/video/BV1MK4y1d7a8/)
+All function information is well-documented with comments in the code: 如有疑问请联系 1647790440@qq.com
 
-各函数的信息，均在代码中写好了注释，如有疑问请联系1647790440@qq.com
-
-## 致谢
-十分感谢原作者的支持和帮助，本项目很大部分都基于源项目，项目所使用的数据集也由原作者提
-
-供。
-
+## Acknowledgments
+We extend our sincere gratitude to the original author for their support and assistance. This project is largely based on the source project, and the datasets used were provided by the original author.
