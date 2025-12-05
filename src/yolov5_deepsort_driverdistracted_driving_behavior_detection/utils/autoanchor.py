@@ -6,7 +6,7 @@ import yaml
 from scipy.cluster.vq import kmeans
 from tqdm import tqdm
 
-from utils.general import colorstr
+from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.general import colorstr
 
 
 def check_anchor_order(m):

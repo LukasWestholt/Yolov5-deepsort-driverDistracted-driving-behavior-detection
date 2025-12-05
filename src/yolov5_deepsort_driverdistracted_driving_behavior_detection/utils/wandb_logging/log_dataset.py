@@ -4,7 +4,7 @@ from pathlib import Path
 import yaml
 
 from wandb_utils import WandbLogger
-from utils.datasets import LoadImagesAndLabels
+from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.datasets import LoadImagesAndLabels
 
 WANDB_ARTIFACT_PREFIX = 'wandb-artifact://'
 

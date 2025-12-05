@@ -6,9 +6,9 @@ from PySide2 import QtWidgets,QtCore,QtGui
 from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox
 from PySide2.QtCore import QDir, QTimer,Slot
 from PySide2.QtGui import QPixmap,QImage
-from ui_mainwindow import Ui_MainWindow
+from yolov5_deepsort_driverdistracted_driving_behavior_detection.ui_mainwindow import Ui_MainWindow
 import cv2
-import myframe
+import yolov5_deepsort_driverdistracted_driving_behavior_detection.myframe as myframe
 
 # 定义变量
 

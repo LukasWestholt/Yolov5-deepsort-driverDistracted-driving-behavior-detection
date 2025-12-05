@@ -6,10 +6,10 @@ import cv2
 import torch
 from numpy import random
 #import evaluator
-from models.experimental import attempt_load
-from utils.general import check_img_size, non_max_suppression, scale_coords, \
+from yolov5_deepsort_driverdistracted_driving_behavior_detection.models.experimental import attempt_load
+from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.general import check_img_size, non_max_suppression, scale_coords, \
     set_logging
-from utils.torch_utils import select_device, time_synchronized
+from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.torch_utils import select_device, time_synchronized
  
  
 def letterbox(img, new_shape=(640, 640), color=(114, 114, 114), auto=True, scaleFill=False, scaleup=True):

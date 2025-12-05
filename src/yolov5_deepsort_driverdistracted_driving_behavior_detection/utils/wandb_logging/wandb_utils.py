@@ -7,7 +7,7 @@ from pathlib import Path
 import torch
 
 sys.path.append(str(Path(__file__).parent.parent.parent))  # add utils/ to path
-from utils.general import colorstr, xywh2xyxy
+from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.general import colorstr, xywh2xyxy
 
 try:
     import wandb

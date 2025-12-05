@@ -18,8 +18,8 @@ import yaml
 from PIL import Image, ImageDraw
 from scipy.signal import butter, filtfilt
 
-from utils.general import xywh2xyxy, xyxy2xywh
-from utils.metrics import fitness
+from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.general import xywh2xyxy, xyxy2xywh
+from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.metrics import fitness
 
 # Settings
 matplotlib.rc('font', **{'size': 11})

@@ -1,8 +1,8 @@
 # 检测的接口函数
 
 import cv2
-import mydetect     #yolo检测
-import myfatigue    #疲劳检测
+import yolov5_deepsort_driverdistracted_driving_behavior_detection.mydetect as mydetect     #yolo检测
+import yolov5_deepsort_driverdistracted_driving_behavior_detection.myfatigue as myfatigue    #疲劳检测
 import time
 
 cap = cv2.VideoCapture(0)

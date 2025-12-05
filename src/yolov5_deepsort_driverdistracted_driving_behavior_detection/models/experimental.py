@@ -4,8 +4,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from models.common import Conv, DWConv
-from utils.google_utils import attempt_download
+from yolov5_deepsort_driverdistracted_driving_behavior_detection.models.common import Conv, DWConv
+from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.google_utils import attempt_download
 
 
 class CrossConv(nn.Module):

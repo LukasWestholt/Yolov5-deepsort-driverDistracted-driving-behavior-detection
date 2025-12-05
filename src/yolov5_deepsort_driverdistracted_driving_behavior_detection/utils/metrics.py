@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
-from . import general
+from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils import general
 
 
 def fitness(x):
