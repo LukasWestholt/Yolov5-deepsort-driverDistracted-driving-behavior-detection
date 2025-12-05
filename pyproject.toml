@@ -23,9 +23,6 @@ dependencies = [
     "dlib",
 ]
 
-[project.scripts]
-yolov5-deepsort-driverdistracted-driving-behavior-detection = "yolov5_deepsort_driverdistracted_driving_behavior_detection:main"
-
 [tool.uv.sources]
 torch = [
   { index = "pytorch-cpu" },
