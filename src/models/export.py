@@ -13,8 +13,8 @@ sys.path.append('./')  # to run '$ python *.py' files in subdirectories
 import torch
 import torch.nn as nn
 
-import yolov5_deepsort_driverdistracted_driving_behavior_detection.models as models
-from yolov5_deepsort_driverdistracted_driving_behavior_detection.models.experimental import attempt_load
+import models
+from models.experimental import attempt_load
 from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.activations import Hardswish, SiLU
 from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.general import set_logging, check_img_size
 

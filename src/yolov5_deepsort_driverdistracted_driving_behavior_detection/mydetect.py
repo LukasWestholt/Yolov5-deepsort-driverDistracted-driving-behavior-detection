@@ -6,7 +6,7 @@ import cv2
 import torch
 from numpy import random
 #import evaluator
-from yolov5_deepsort_driverdistracted_driving_behavior_detection.models.experimental import attempt_load
+from models.experimental import attempt_load
 from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.general import check_img_size, non_max_suppression, scale_coords, \
     set_logging
 from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.torch_utils import select_device, time_synchronized
@@ -45,7 +45,7 @@ def letterbox(img, new_shape=(640, 640), color=(114, 114, 114), auto=True, scale
     return img, ratio, (dw, dh)
  
  
-weights = r'weights/best.pt'
+weights = r'src/yolov5_deepsort_driverdistracted_driving_behavior_detection/weights/best.pt'
 opt_device = ''  # device = 'cpu' or '0' or '0,1,2,3'
 imgsz = 640
 opt_conf_thres = 0.6
