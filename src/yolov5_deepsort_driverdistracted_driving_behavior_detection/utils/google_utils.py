@@ -16,10 +16,8 @@ def gsutil_getsize(url=''):
     return eval(s.split(' ')[0]) if len(s) else 0  # bytes
 
 
-def attempt_download(file, repo='ultralytics/yolov5'):
+def attempt_download(file: Path, repo='ultralytics/yolov5'):
     # Attempt file download if does not exist
-    file = Path(str(file).strip().replace("'", '').lower())
-
     if not file.exists():
         try:
             response = requests.get(f'https://api.github.com/repos/{repo}/releases/latest').json()  # github api

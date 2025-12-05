@@ -1,4 +1,5 @@
 # This file contains experimental modules
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -110,7 +111,7 @@ class Ensemble(nn.ModuleList):
         return y, None  # inference, train output
 
 
-def attempt_load(weights, map_location=None):
+def attempt_load(weights: list[Path] | Path, map_location=None):
     # Loads an ensemble of models weights=[a,b,c] or a single model weights=[a] or weights=a
     model = Ensemble()
     for w in weights if isinstance(weights, list) else [weights]:

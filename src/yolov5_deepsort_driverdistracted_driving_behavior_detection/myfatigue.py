@@ -1,4 +1,5 @@
 # 疲劳检测，检测眼睛和嘴巴的开合程度
+from pathlib import Path
 
 from scipy.spatial import distance as dist
 from imutils.video import FileVideoStream
@@ -38,7 +39,9 @@ print("[INFO] loading facial landmark predictor...")
 # 使用dlib.get_frontal_face_detector() 获得脸部位置检测器
 detector = dlib.get_frontal_face_detector()
 # 使用dlib.shape_predictor获得脸部特征位置检测器
-predictor = dlib.shape_predictor('src/yolov5_deepsort_driverdistracted_driving_behavior_detection/weights/shape_predictor_68_face_landmarks.dat')
+BASE_DIR = Path(__file__).parent
+file = BASE_DIR / "weights" / "shape_predictor_68_face_landmarks.dat"
+predictor = dlib.shape_predictor(str(file))
 # 分别获取左右眼面部标志的索引
 (lStart, lEnd) = face_utils.FACIAL_LANDMARKS_IDXS["left_eye"]
 (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eye"]

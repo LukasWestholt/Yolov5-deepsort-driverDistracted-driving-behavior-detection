@@ -5,6 +5,7 @@ import numpy as np
 import cv2
 import torch
 from numpy import random
+from pathlib import Path
 #import evaluator
 from models.experimental import attempt_load
 from yolov5_deepsort_driverdistracted_driving_behavior_detection.utils.general import check_img_size, non_max_suppression, scale_coords, \
@@ -43,9 +44,10 @@ def letterbox(img, new_shape=(640, 640), color=(114, 114, 114), auto=True, scale
     left, right = int(round(dw - 0.1)), int(round(dw + 0.1))
     img = cv2.copyMakeBorder(img, top, bottom, left, right, cv2.BORDER_CONSTANT, value=color)  # add border
     return img, ratio, (dw, dh)
- 
- 
-weights = r'src/yolov5_deepsort_driverdistracted_driving_behavior_detection/weights/best.pt'
+
+
+BASE_DIR = Path(__file__).parent
+weights = BASE_DIR / "weights" / "best.pt"
 opt_device = ''  # device = 'cpu' or '0' or '0,1,2,3'
 imgsz = 640
 opt_conf_thres = 0.6
