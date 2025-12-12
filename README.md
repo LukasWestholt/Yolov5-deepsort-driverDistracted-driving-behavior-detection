@@ -18,7 +18,7 @@ The distraction detection component employs YoloV5 to identify three behaviors: 
 ## Usage (windows only)
 ```
 uv sync
-uv run main.py
+uv run python -m yolov5_deepsort_driverdistracted_driving_behavior_detection
 ```
 
 We depend on dlib precompiled for windows by https://github.com/z-mahmud22/Dlib_Windows_Python3.x/tree/main.
