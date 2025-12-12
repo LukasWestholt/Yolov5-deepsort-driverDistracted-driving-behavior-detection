@@ -5,8 +5,6 @@ import yolov5_deepsort_driverdistracted_driving_behavior_detection.mydetect as m
 import yolov5_deepsort_driverdistracted_driving_behavior_detection.myfatigue as myfatigue    #疲劳检测
 import time
 
-cap = cv2.VideoCapture(0)
-
 def frametest(frame):
     # frame为帧输入
 
