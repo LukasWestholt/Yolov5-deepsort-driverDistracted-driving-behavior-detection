@@ -4,7 +4,8 @@ requires-python = "==3.10.*"
 resolution-markers = [
     "sys_platform == 'darwin'",
     "platform_machine == 'aarch64' and sys_platform == 'linux'",
-    "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')",
+    "sys_platform == 'win32'",
+    "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux' and sys_platform != 'win32')",
 ]
 
 [[package]]
@@ -87,8 +88,24 @@ wheels = [
 name = "dlib"
 version = "19.22.99"
 source = { url = "https://github.com/z-mahmud22/Dlib_Windows_Python3.x/raw/2cc3bb593701cc7fc4007a299c3f19b34a76c002/dlib-19.22.99-cp310-cp310-win_amd64.whl" }
+resolution-markers = [
+    "sys_platform == 'win32'",
+]
 wheels = [
     { url = "https://github.com/z-mahmud22/Dlib_Windows_Python3.x/raw/2cc3bb593701cc7fc4007a299c3f19b34a76c002/dlib-19.22.99-cp310-cp310-win_amd64.whl", hash = "sha256:f2181b6724669fb0147c9ebc326d72b94de41bced1812eff5df4b133b5d0b575" },
+]
+
+[[package]]
+name = "dlib"
+version = "20.0.99"
+source = { url = "https://github.com/LukasWestholt/dlib-compiled/releases/download/v1.0.1/dlib-20.0.99-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl" }
+resolution-markers = [
+    "sys_platform == 'darwin'",
+    "platform_machine == 'aarch64' and sys_platform == 'linux'",
+    "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux' and sys_platform != 'win32')",
+]
+wheels = [
+    { url = "https://github.com/LukasWestholt/dlib-compiled/releases/download/v1.0.1/dlib-20.0.99-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:5fdd419a0d3d8def6a821564c25b0bbd9a8cd017ec06f58cfd11097dd77933b6" },
 ]
 
 [[package]]
@@ -468,7 +485,8 @@ version = "2.9.1+cpu"
 source = { registry = "https://download.pytorch.org/whl/cpu" }
 resolution-markers = [
     "platform_machine == 'aarch64' and sys_platform == 'linux'",
-    "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')",
+    "sys_platform == 'win32'",
+    "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux' and sys_platform != 'win32')",
 ]
 dependencies = [
     { name = "filelock", marker = "sys_platform != 'darwin'" },
@@ -508,7 +526,8 @@ name = "torchvision"
 version = "0.24.1+cpu"
 source = { registry = "https://download.pytorch.org/whl/cpu" }
 resolution-markers = [
-    "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')",
+    "sys_platform == 'win32'",
+    "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux' and sys_platform != 'win32')",
 ]
 dependencies = [
     { name = "numpy", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
@@ -564,7 +583,8 @@ name = "yolov5-deepsort-driverdistracted-driving-behavior-detection"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "dlib" },
+    { name = "dlib", version = "19.22.99", source = { url = "https://github.com/z-mahmud22/Dlib_Windows_Python3.x/raw/2cc3bb593701cc7fc4007a299c3f19b34a76c002/dlib-19.22.99-cp310-cp310-win_amd64.whl" }, marker = "sys_platform == 'win32'" },
+    { name = "dlib", version = "20.0.99", source = { url = "https://github.com/LukasWestholt/dlib-compiled/releases/download/v1.0.1/dlib-20.0.99-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl" }, marker = "sys_platform != 'win32'" },
     { name = "imutils" },
     { name = "matplotlib" },
     { name = "numpy" },
@@ -583,7 +603,8 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "dlib", url = "https://github.com/z-mahmud22/Dlib_Windows_Python3.x/raw/2cc3bb593701cc7fc4007a299c3f19b34a76c002/dlib-19.22.99-cp310-cp310-win_amd64.whl" },
+    { name = "dlib", marker = "sys_platform != 'win32'", url = "https://github.com/LukasWestholt/dlib-compiled/releases/download/v1.0.1/dlib-20.0.99-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl" },
+    { name = "dlib", marker = "sys_platform == 'win32'", url = "https://github.com/z-mahmud22/Dlib_Windows_Python3.x/raw/2cc3bb593701cc7fc4007a299c3f19b34a76c002/dlib-19.22.99-cp310-cp310-win_amd64.whl" },
     { name = "imutils", specifier = ">=0.5.4" },
     { name = "matplotlib", specifier = ">=3.10.7" },
     { name = "numpy", specifier = "<2" },
